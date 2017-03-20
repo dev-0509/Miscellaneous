@@ -23,6 +23,15 @@ function printTestCaseResult()
 	echo "$1 Test $2 : $3"
 }
 
+function callExecutable()
+{
+	output_string=$( ./StringUtils.exe -maxlength $maxlength_value 
+	                                   -lastnchars $lastnchars_value 
+	                                   $string )
+
+	echo $output_string
+}
+
 function executeTests()
 {
 	testnumber=1
@@ -37,8 +46,8 @@ function executeTests()
 
 	expected="Indonesia"
 
-	output=$(./StringUtils.exe -maxlength $maxlength_value -lastnchars $lastnchars_value $string)
-	result=$(checkIfEqual $expected $output)
+	output=$( callExecutable )
+	result=$( checkIfEqual $expected $output )
 
 	printTestCaseResult $1 $testnumber $result
   #-------------------------------------------------------------------------#
@@ -52,8 +61,8 @@ function executeTests()
 
 	expected="Indonesia123"
 
-	output=$(./StringUtils.exe -maxlength $maxlength_value -lastnchars $lastnchars_value $string)
-	result=$(checkIfEqual $expected $output)
+	output=$( callExecutable )
+	result=$( checkIfEqual $expected $output )
 
 	printTestCaseResult $1 $testnumber $result
   #----------------------------------------------------------------------------#
@@ -67,8 +76,8 @@ function executeTests()
 
 	expected="Indone...234"
 
-	output=$(./StringUtils.exe -maxlength $maxlength_value -lastnchars $lastnchars_value $string)
-	result=$(checkIfEqual $expected $output)
+	output=$( callExecutable )
+	result=$( checkIfEqual $expected $output )
 
 	printTestCaseResult $1 $testnumber $result
   #-----------------------------------------------------------------------------#
@@ -82,8 +91,8 @@ function executeTests()
 
 	expected="Ind..."
 
-	output=$(./StringUtils.exe -maxlength $maxlength_value -lastnchars $lastnchars_value $string)
-	result=$(checkIfEqual $expected $output)
+	output=$( callExecutable )
+	result=$( checkIfEqual $expected $output )
 
 	printTestCaseResult $1 $testnumber $result
   #------------------------------------------------------------------------#
@@ -97,8 +106,8 @@ function executeTests()
 
 	expected="...nesia"
 
-	output=$(./StringUtils.exe -maxlength $maxlength_value -lastnchars $lastnchars_value $string)
-	result=$(checkIfEqual $expected $output)
+	output=$( callExecutable )
+	result=$( checkIfEqual $expected $output )
 
 	printTestCaseResult $1 $testnumber $result
   #------------------------------------------------------------------------#
@@ -112,8 +121,8 @@ function executeTests()
 
 	expected="Error!"
 
-	output=$(./StringUtils.exe -maxlength $maxlength_value -lastnchars $lastnchars_value $string)
-	result=$(checkIfEqual $expected $output)	
+	output=$( callExecutable )
+	result=$( checkIfEqual $expected $output )	
 
 	printTestCaseResult $1 $testnumber $result
   #------------------------------------------------------------------------#
@@ -126,9 +135,9 @@ function executeTests()
 	string="Indonesia"
 
 	expected="Error!"
-	
-	output=$(./StringUtils.exe -maxlength $maxlength_value -lastnchars $lastnchars_value $string)
-	result=$(checkIfEqual $expected $output)	
+
+	output=$( callExecutable )
+	result=$( checkIfEqual $expected $output )	
 
 	printTestCaseResult $1 $testnumber $result
   #-------------------------------------------------------------------------#
@@ -142,8 +151,8 @@ function executeTests()
 
 	expected="Error!"
 
-	output=$(./StringUtils.exe -maxlength $maxlength_value -lastnchars $lastnchars_value $string)
-	result=$(checkIfEqual $expected $output)	
+	output=$( callExecutable )
+	result=$( checkIfEqual $expected $output )	
 
 	printTestCaseResult $1 $testnumber $result
   #-------------------------------------------------------------------------#
