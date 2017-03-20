@@ -31,8 +31,13 @@ function executeTests()
 	gcc StringUtilTest.c StringUtils.c -o StringUtils.exe
 
   #-------------------------- TEST CASE 1 ----------------------------------#
+	maxlength_value=12
+	lastnchars_value=3
+	string="Indonesia"
+
 	expected="Indonesia"
-	output=$(./StringUtils.exe -maxlength 12 -lastnchars 3 "Indonesia")
+
+	output=$(./StringUtils.exe -maxlength $maxlength_value -lastnchars $lastnchars_value $string)
 	result=$(checkIfEqual $expected $output)
 
 	printTestCaseResult $1 $testnumber $result
@@ -41,8 +46,13 @@ function executeTests()
   
 
   #-------------------------- TEST CASE 2 -------------------------------------#
+	maxlength_value=12
+	lastnchars_value=3
+	string="Indonesia123"
+
 	expected="Indonesia123"
-	output=$(./StringUtils.exe -maxlength 12 -lastnchars 3 "Indonesia123")
+
+	output=$(./StringUtils.exe -maxlength $maxlength_value -lastnchars $lastnchars_value $string)
 	result=$(checkIfEqual $expected $output)
 
 	printTestCaseResult $1 $testnumber $result
@@ -51,8 +61,13 @@ function executeTests()
 
 
   #-------------------------- TEST CASE 3 --------------------------------------#
+	maxlength_value=12
+	lastnchars_value=3
+	string="Indonesia1234"
+
 	expected="Indone...234"
-	output=$(./StringUtils.exe -maxlength 12 -lastnchars 3 "Indonesia1234")
+
+	output=$(./StringUtils.exe -maxlength $maxlength_value -lastnchars $lastnchars_value $string)
 	result=$(checkIfEqual $expected $output)
 
 	printTestCaseResult $1 $testnumber $result
@@ -61,8 +76,13 @@ function executeTests()
 
 
   #-------------------------- TEST CASE 4 ---------------------------------#
+	maxlength_value=6
+	lastnchars_value=0
+	string="Indonesia"
+
 	expected="Ind..."
-	output=$(./StringUtils.exe -maxlength 6 -lastnchars 0 "Indonesia")
+
+	output=$(./StringUtils.exe -maxlength $maxlength_value -lastnchars $lastnchars_value $string)
 	result=$(checkIfEqual $expected $output)
 
 	printTestCaseResult $1 $testnumber $result
@@ -71,8 +91,13 @@ function executeTests()
 
 
   #-------------------------- TEST CASE 5 ---------------------------------#
+	maxlength_value=8
+	lastnchars_value=7
+	string="Indonesia"
+
 	expected="...nesia"
-	output=$(./StringUtils.exe -maxlength 8 -lastnchars 7 "Indonesia")
+
+	output=$(./StringUtils.exe -maxlength $maxlength_value -lastnchars $lastnchars_value $string)
 	result=$(checkIfEqual $expected $output)
 
 	printTestCaseResult $1 $testnumber $result
@@ -81,8 +106,13 @@ function executeTests()
 
 
   #-------------------------- TEST CASE 6 ---------------------------------#
+	maxlength_value=8
+	lastnchars_value=9
+	string="Indonesia"
+
 	expected="Error!"
-	output=$(./StringUtils.exe -maxlength 8 -lastnchars 9 "Indonesia")
+
+	output=$(./StringUtils.exe -maxlength $maxlength_value -lastnchars $lastnchars_value $string)
 	result=$(checkIfEqual $expected $output)	
 
 	printTestCaseResult $1 $testnumber $result
@@ -91,8 +121,13 @@ function executeTests()
 
 
   #-------------------------- TEST CASE 7 ----------------------------------#
+	maxlength_value=-8
+	lastnchars_value=3
+	string="Indonesia"
+
 	expected="Error!"
-	output=$(./StringUtils.exe -maxlength -8 -lastnchars 3 "Indonesia")
+	
+	output=$(./StringUtils.exe -maxlength $maxlength_value -lastnchars $lastnchars_value $string)
 	result=$(checkIfEqual $expected $output)	
 
 	printTestCaseResult $1 $testnumber $result
@@ -101,8 +136,13 @@ function executeTests()
 
 
   #-------------------------- TEST CASE 8 ----------------------------------#
+	maxlength_value=8
+	lastnchars_value=-3
+	string="Indonesia"
+
 	expected="Error!"
-	output=$(./StringUtils.exe -maxlength 8 -lastnchars -3 "Indonesia")
+
+	output=$(./StringUtils.exe -maxlength $maxlength_value -lastnchars $lastnchars_value $string)
 	result=$(checkIfEqual $expected $output)	
 
 	printTestCaseResult $1 $testnumber $result
