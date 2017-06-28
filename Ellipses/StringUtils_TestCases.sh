@@ -25,9 +25,7 @@ function printTestCaseResult()
 
 function callExecutable()
 {
-	output_string=$( ./StringUtils.exe -maxlength $maxlength_value 
-	                                   -lastnchars $lastnchars_value 
-	                                   $string )
+	output_string=$( ./StringUtils.exe -maxlength $maxlength_value -lastnchars $lastnchars_value $string )
 
 	echo $output_string
 }
