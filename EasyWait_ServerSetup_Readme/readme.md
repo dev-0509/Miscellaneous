@@ -61,7 +61,7 @@ To generate the `APP_KEY`, execute the below command: -
 
 `php artisan key:generate`
 
-### DOTENV FILE SETUP
+### .ENV FILE SETUP
 
 Inside the EasyWaitService directory, create a new text file and copy the contents of `.env.example` to this new text file.
 
