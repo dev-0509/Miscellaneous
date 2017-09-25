@@ -63,7 +63,7 @@ To generate the `APP_KEY`, execute the below command: -
 
 ### .ENV FILE SETUP
 
-Inside the EasyWaitService directory, create a new text file and copy the contents of `.env.example` to this new text file.
+Inside the EasyWaitService directory, create a new text file and copy the contents of `.env.example` ( present in the same directory ) to this new text file.
 
 Update the following fields in this text file: -
 
