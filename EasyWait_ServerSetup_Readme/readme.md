@@ -4,18 +4,18 @@ This repository contains the service API
 ### Local Machine Setup
 
 ---
-### Software Setup
+### SOFTWARE SETUP
 ---
 
-### COMPOSER - The PHP Dependency Manager
+### Composer - The PHP Dependency Manager
 
 Install the latest `Composer` version [here](https://getcomposer.org/download/) ( Both Windows | Linux )
 
-### LARAVEL FRAMEWORK
+### Laravel Framework
 
 Setup the framework [here](https://laravel.com/docs/5.5)
 
-### SERVER SETUP
+### Server Setup
 
 Setup the software stack,
 
@@ -28,7 +28,7 @@ Setup the software stack,
 >**Linux** - [LAMP Server](http://howtoubuntu.org/how-to-install-lamp-on-ubuntu)
 
 ---
-### Environment Setup
+### ENVIRONMENT SETUP
 ---
 
 Clone and route to the Git Repository using the commands below in the terminal/cmd: -
@@ -37,7 +37,7 @@ Clone and route to the Git Repository using the commands below in the terminal/c
 
 `cd EasyWaitService`
 
-### DATABASE & SCHEMA SETUP
+### Database & Schema Setup
 
 Start the MySQL CLI via the following command: -
 
@@ -53,7 +53,7 @@ Inside the MySQL CLI, create a schema for the DB for the application. Execute th
 
 `exit`
 
-### KEY GENERATION - Unique Local Machine Authorization Token
+### Key Generation - Unique Local Machine Authorization Token
 
 Also known as the Application Key`(APP_KEY)`, it is unique string of characters identifying the application on a local machine.
 
@@ -61,7 +61,7 @@ To generate the `APP_KEY`, execute the below command: -
 
 `php artisan key:generate`
 
-### .ENV FILE SETUP
+### .env File Setup
 
 Inside the EasyWaitService directory, create a new text file and copy the contents of `.env.example` ( present in the same directory ) to this new text file.
 
@@ -78,7 +78,7 @@ Update the following fields in this text file: -
 Save this text file as `.env`, the global environment file for the Laravel project.
 
 ---
-### Database Migrations
+### DATABASE MIGRATIONS
 ---
 Migrations are files which contain a class definition with both an up() and a down() method.
 
@@ -86,7 +86,7 @@ The `up()` method usually contais the shema for the table and is run when the mi
 
 The `down()` method is run to revert the changes, ie, rollback.
 
-### GENERATION OF MIGRATION TABLE
+### Generation of Migration Table
 
 The **Migration Table** is a special table in your database to keep track of what migrations have already been executed.
 To generate it, execute the following command: -
@@ -98,7 +98,7 @@ Once done, migrate all the DB tables for your application using the below comman
 `php artisan migrate`
 
 ---
-### Start the Server
+### START THE SERVER
 ---
 
 Once done with the above steps, start your server using the below command: -
@@ -110,13 +110,13 @@ Open the link provided in a suitable browser to access the server.
 ---
 
 ---
-### Official Documentation
+### OFFICIAL DOCUMENTATION
 ---
-### Contributing
+### CONTRIBUTING
 ---
-### Security Vulnerabilities
+### SECURITY VULNERABILITIES
 ---
-### License
+### LICENSE
 ---
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
