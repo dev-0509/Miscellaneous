@@ -82,7 +82,7 @@ Save this text file as `.env`, the global environment file for the Laravel proje
 ---
 Migrations are files which contain a class definition with both an up() and a down() method.
 
-The `up()` method usually contais the shema for the table and is run when the migration is executed to apply changes to the database. 
+The `up()` method usually contains the shema for the table and is run when the migration is executed to apply changes to the database. 
 
 The `down()` method is run to revert the changes, ie, rollback.
 
