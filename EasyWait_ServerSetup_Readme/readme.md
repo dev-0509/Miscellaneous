@@ -108,15 +108,3 @@ Once done with the above steps, start your server using the below command: -
 Open the link provided in a suitable browser to access the server.
 
 ---
-
----
-### OFFICIAL DOCUMENTATION
----
-### CONTRIBUTING
----
-### SECURITY VULNERABILITIES
----
-### LICENSE
----
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
