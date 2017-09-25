@@ -5,6 +5,7 @@ This repository contains the service API
 
 ---
 ### Software Setup
+---
 
 ##### COMPOSER - The PHP Dependency Manager
 
