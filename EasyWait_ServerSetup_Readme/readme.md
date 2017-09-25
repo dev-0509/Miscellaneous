@@ -6,15 +6,15 @@ This repository contains the service API
 ---
 ### Software Setup
 
-	COMPOSER - The PHP Dependency Manager
+##### COMPOSER - The PHP Dependency Manager
 
 Install the latest `Composer` version [here](https://getcomposer.org/download/) ( Both Windows | Linux )
 
-	LARAVEL FRAMEWORK
+##### LARAVEL FRAMEWORK
 
 Setup the framework [here](https://laravel.com/docs/5.5)
 
-	SERVER SETUP
+##### SERVER SETUP
 
 Setup the software stack,
 
@@ -36,7 +36,7 @@ Clone and route to the Git Repository using the commands below in the terminal/c
 
 `cd EasyWaitService`
 
-	DATABASE & SCHEMA SETUP
+##### DATABASE & SCHEMA SETUP
 
 Start the MySQL CLI via the following command: -
 
@@ -52,7 +52,7 @@ Inside the MySQL CLI, create a schema for the DB for the application. Execute th
 
 `exit`
 
-	KEY GENERATION - Unique Local Machine Authorization Token
+##### KEY GENERATION - Unique Local Machine Authorization Token
 
 Also known as the Application Key`(APP_KEY)`, it is unique string of characters identifying the application on a local machine.
 
@@ -60,7 +60,7 @@ To generate the `APP_KEY`, execute the below command: -
 
 `php artisan key:generate`
 
-	DOTENV FILE SETUP
+##### DOTENV FILE SETUP
 
 Inside the EasyWaitService directory, create a new text file and copy the contents of `.env.example` to this new text file.
 
@@ -85,7 +85,7 @@ The `up()` method usualyy contais the shema for the table and is run when the mi
 
 The `down()` method is run to revert the changes, ie, rollback.
 
-	GENERATION OF MIGRATION TABLE
+##### GENERATION OF MIGRATION TABLE
 
 The **Migration Table** is a special table in your database to keep track of what migrations have already been executed.
 To generate it, execute the following command: -
