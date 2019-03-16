@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 struct Point {
 	int row;
@@ -36,6 +37,8 @@ class RotatableMatrix
 	int matrix[10][10] ;
 	int resultant_matrix[10][10];					
 	int protect;
+	int LOWER_BOUND;
+	int UPPER_BOUND;
 
 	void LoadFromFile(const char *fileName)
 	{
@@ -76,42 +79,51 @@ class RotatableMatrix
 	}
 
 	void RotateOuterMatrix() {
-		source_point.row = source_point.column = 0;
-		protect = matrix[source_point.row][source_point.column];
-		do
+		
+		int iter;
+		
+		for(iter = 0; iter < (MATRIX_SIZE/2); ++iter)
 		{
-			SetTargetRotation();		
-			PrintPoints();
-			SwapElement();
+			LOWER_BOUND = iter ;
+			UPPER_BOUND = MATRIX_SIZE - iter;
 			
-			source_point.row = target_point.row;
-			source_point.column = target_point.column;	
-		}while( rotationNotCompleted() );
+			source_point.row = source_point.column = LOWER_BOUND;
+			protect = matrix[source_point.row][source_point.column];
+			do
+			{
+				SetTargetRotation();		
+				//PrintPoints();
+				SwapElement();
+				
+				source_point.row = target_point.row;
+				source_point.column = target_point.column;	
+			}while( rotationNotCompleted() );
+		}
 	}
 
 	void SetTargetRotation() {
-		if (source_point.row == 0)
+		if (source_point.row == LOWER_BOUND)
 		{
 			SetTargetRotationForFirstRow();
 		}
-		else if (source_point.column == MATRIX_SIZE - 1)
+		else if (source_point.column == UPPER_BOUND - 1)
 		{
 			SetTargetRotationForLastColumn();		
 		}
-		else if(source_point.row == MATRIX_SIZE - 1)
+		else if(source_point.row == UPPER_BOUND - 1)
 		{
 			SetTargetRotationForLastRow();
 		}
-		else if(source_point.column == 0)
+		else if(source_point.column == LOWER_BOUND)
 		{
 			SetTargetRotationForFirstColumn();
 		}
 	}
 
 	void SetTargetRotationForFirstRow() {
-		if (source_point.column+1 == MATRIX_SIZE)
+		if (source_point.column+1 == UPPER_BOUND)
 		{
-			target_point.column = MATRIX_SIZE - 1;
+			target_point.column = UPPER_BOUND - 1;
 			target_point.row = source_point.row + 1;
 		}
 		else
@@ -122,7 +134,7 @@ class RotatableMatrix
 	}
 
 	void SetTargetRotationForLastColumn() {
-		if (source_point.row+1 == MATRIX_SIZE)
+		if (source_point.row+1 == UPPER_BOUND)
 		{
 			target_point.row = source_point.row;
 			target_point.column = source_point.column - 1;
@@ -135,7 +147,7 @@ class RotatableMatrix
 	}
 
 	void SetTargetRotationForLastRow() {
-		if (source_point.column == 0)
+		if (source_point.column == LOWER_BOUND)
 		{
 			target_point.row = source_point.row - 1;
 			target_point.column = source_point.column;
@@ -148,7 +160,7 @@ class RotatableMatrix
 	}
 
 	void SetTargetRotationForFirstColumn() {
-		if (source_point.row == 0)
+		if (source_point.row == LOWER_BOUND)
 		{
 			target_point.row = source_point.row;
 			target_point.column = source_point.column + 1;
@@ -166,7 +178,7 @@ class RotatableMatrix
 	}
 
 	int rotationNotCompleted() {
-		if ( target_point.row == 0 && target_point.column == 0 ) 
+		if ( target_point.row == LOWER_BOUND && target_point.column == LOWER_BOUND ) 
 		{
 			return 0;
 		}
@@ -204,12 +216,14 @@ class RotatableMatrix
 	}
 };
 
-int main()
+int main(int argc, char *argv[])
 {
-	RotatableMatrix obj(3, "edge3.txt"), obj1(4, "edge4.txt");
+	int size = atoi(argv[1]);
+	char *fileName = argv[2];
 	
-	obj.main();
-	obj1.main();
+	RotatableMatrix object(size, fileName);
+	
+	object.main();
 	
 	return 0;
 }
