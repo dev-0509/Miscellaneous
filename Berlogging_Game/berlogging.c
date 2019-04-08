@@ -37,7 +37,7 @@ void getNamesOccuringAtLeastOnce()
 
 void fetchInput()
 {
-    int iter, index;
+    int iter;
     
     scanf("%d", &total_rounds);
     
@@ -75,8 +75,6 @@ int returnNameIndex(char *inp_name)
 
 void checkIfScoreIsMax(int score, int name_index)
 {
-    int iter;
-
     if(score > final_score[current_winner])
     
         current_winner = name_index;
@@ -89,7 +87,7 @@ char * getWinner()
 
 int main()
 {
-    int iter1, score, round, name_index, isWinner, index;
+    int score, round, name_index;
     char name[32];
     
     fetchInput();
