@@ -1,4 +1,6 @@
-//gcc 6.3
+// gcc 6.3
+
+// Route to the file 'problem_statement.md' for steps to execute the following code
 
 #include  <stdio.h>
 #include  <string.h>
